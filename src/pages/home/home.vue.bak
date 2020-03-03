@@ -1,0 +1,120 @@
+
+<template>
+	<page :title="navTitle" :noBack="true" :menuTxt="menuTxt" @clickMenu="clickMenu">
+
+		<component :is="curTabComp" class="pos-mask" slot="wrap" />
+		<div class="tabbar-bg bdt bg-white" slot="btm" :style="heightStyle">
+			<ul class="tabbar d-flex space-btw">
+				<li @click="changeTab(item.idx)" :class="{ active: item.idx == curTabIndex }" 
+					v-for="(item, index) in btmTabs" :key="index">
+					<i class="iconfont" :class="'icon-' + item.icon + (item.idx == curTabIndex ? 'fill' : '')"></i>
+					<p>{{item.title}}</p>
+				</li>
+			</ul>
+			<div class="fix-btm"></div>
+		</div>
+	</page>
+</template>
+
+<script>
+import { mapState } from 'vuex'
+// import tab0 from './home-tab0/'
+// import tab1 from './home-tab1'
+// import tab2 from './home-tab2'
+// import tab3 from './home-tab3'
+import { addRule, openLink } from 'assets/helper'
+
+export default {
+	name: 'home',
+	data() {
+		let compMap = {}
+		let btmTabs = [
+			{
+				title: '首页',
+				navTitle: Param.app_name || '首页',
+				idx: 0,
+				icon: 'home'
+			},
+			{
+				title: '贷款',
+				idx: 1,
+				icon: 'recharge'
+			},
+			// {
+			// 	title: '攻略',
+			// 	idx: 2,
+			// 	icon: 'community'
+			// },
+			{
+				title: '我的',
+				idx: 3,
+				icon: 'people'
+			},
+		];
+		return {
+			btmTabs,
+			compMap,
+			heightStyle: {
+				marginBottom: "",
+			}
+		};
+	},
+	computed: {
+		...mapState({
+			curTabIndex: s => s.cur_tab_idx,
+		}),
+		curTabComp() {
+			return this.compMap[this.curTabIndex] || ('tab' + this.curTabIndex);
+		},
+		curTab() {
+			return this.btmTabs.filter(item => item.idx == this.curTabIndex)[0]
+		},
+		navTitle() {
+			const tab = this.curTab;
+			return tab.navTitle || tab.title;
+		},
+		menuTxt() {
+			return this.curTab.menuTxt;
+		},
+		menuRoute() {
+			return this.curTab.menuRoute;
+		},
+	},
+	watch: {
+		curTabIndex(tab) {
+			this.$router.replace({ path: '/', query: { tab, _replace: 1 } });
+		},
+	},
+	methods: {
+		clickMenu() {
+			this.$router.push(this.menuRoute);
+		},
+		changeTab(index) {
+			if(index == -1) return openLink('http://jybkh5.51meishidi.com/signUp.html?channel_id=86')
+			this.$store.commit('SET_TAB', index);
+		},
+		getHeight() {
+			var str= navigator.userAgent.toLowerCase(); 
+			let bottom = 0;
+			if(str.indexOf('iphone')) {
+					var ver=str.match(/cpu iphone os (.*?) like mac os/);
+					const version = ver[1].replace(/_/g,".");
+					bottom = 20;
+					Number(version) > 12.1 ? bottom = 40 : false;
+					if(window.screen.height == 812 || window.screen.height == 896)  bottom = 44;
+			}
+			// alert(window.screen.height, "height");
+			this.heightStyle.marginBottom = bottom + "px";
+		}
+	},
+	components: {
+		tab0: resolve => require(['./home-tab0'], resolve),
+		tab1: resolve => require(['./home-tab1'], resolve),
+		tab3: resolve => require(['./home-tab3'], resolve),
+	},
+	created() {
+		this.getHeight();
+	}
+}
+
+</script>

@@ -1,0 +1,49 @@
+<template>
+	<page title="融花花" :no-back="true">
+		<div class="ta-c" style="margin-top: 80px;">
+			<img src="https://xinkouzi.oss-cn-shanghai.aliyuncs.com/fb7a8200-0e3b-11e9-8785-d130100656f0.png?220_220"
+				style="width: 160px;">
+			<p class="gray fz-12">扫一扫下载APP</p>
+
+			<button class="btn" style="margin-top: 40px;" @click="downApp">立即借钱</button>
+			<a data-toggle="modal" id="inhouseClick" @click="showMsg"  href="javascript:void(0)" style="color: #1abc9c;">
+                    <i class="fa fa-hand-o-right" aria-hidden="true" style="padding-right:5px;"></i>"未受信任的企业级开发者"的解决办法</a>
+			<div id="showMsgDiv"  style="display: none;">
+			  <iframe src="https://testapp.xyhuigou.com:8890/haojie/downTip.html"  scrolling="yes"></iframe>
+			  <div class="modal-footer" style="margin-top:0px">
+          <a data-dismiss="modal" href="javascript:void(0)" class="btn btn-u btn-u btn-u-default" id="cancle" @click="closeMsg">关闭</a>
+        </div>
+			</div>
+		</div>
+	</page>
+</template>
+
+<script>
+export default {
+	data() {
+		return {
+			link: 'https://dc.xyhuigou.com/haojie/haojie2.1.apk',
+		}
+	},
+	mounted() {
+		// if(Param.plat == 1) this.link = 'itms-services://?action=download-manifest&url=https://testapp.xyhuigou.com:8890/haojie/haojie.plist'
+	  if(Param.plat == 1) this.link = 'https://xmvip.vip/DNX9X3'
+	},
+	methods: {
+		downApp() {
+			//if(Param.plat == 2 && Param.inWechat) return alert('请在浏览器中打开')
+			if(Param.inWechat) return alert('请在浏览器中打开')
+			location.href = this.link
+		},
+		showMsg(){
+		  var obj = document.getElementById("showMsgDiv");
+      obj.style.cssText = "display: inline-block;";
+		},
+		closeMsg(){
+		  var obj = document.getElementById("showMsgDiv");
+      obj.style.cssText = "display: none;";
+		}
+	}
+}
+</script>
+

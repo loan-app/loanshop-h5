@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="description" content="贷款猫" />
+		<meta http-equiv="pragma" content="no-cache">
+		<link rel="stylesheet" href="//at.alicdn.com/t/font_445136_h49gyemmfs35l8fr.css">
+		<title>首页</title>
+		<script>
+			var autoSetRem = (function(doc, win) {
+				var docEl = doc.documentElement,
+						done = false,
+						resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+						set = function(paper) {
+								if(paper==null){
+										paper=750;
+								}
+								var clientWidth = docEl.clientWidth || win.innerWidth || screen.width;
+								if(clientWidth>=640){
+										clientWidth = 640;
+								}
+								if (!clientWidth) return;
+								docEl.style.fontSize = 100 * (clientWidth / paper) + 'px';
+								done = true;
+								return done;
+						};
+				return {
+						set:set
+				};
+				//AbortifbrowserdoesnotsupportaddEventListener
+				if (!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, set, false);
+				doc.addEventListener('DOMContentLoaded', set, false);
+			})(document, window);
+
+			autoSetRem.set(750);
+
+		</script>
+	</head>
+	<body>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+
+<!--<script type="text/javascript" charset="utf-8" src='https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/2.5.1/vconsole.min.js'></script>-->
+<!-- <script>
+if(location.protocol == 'https:') {
+	// 百度统计
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?9e91303f85bb07195c04094a49e9ad3b";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+}
+</script> -->
+	<!-- <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script> -->
+	<!--<script type="text/javascript" src="https://s23.cnzz.com/z_stat.php?id=1277363432&web_id=1277363432"></script>
+	<script type="text/javascript">
+		//document.getElementsByTagName('a')[0].style.display = 'none';
+	</script>-->
+	</body>
+</html>
