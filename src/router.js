@@ -19,7 +19,7 @@ Vue.component('set-item', { template: '<li class="more"><slot/></li>' })
 
 const routes = [
 	// { path: '/', component: pages.Home, },
-	{ path: '/', component: resolve => require(['./pages/home/home.vue'], resolve)},
+	// { path: '/', component: resolve => require(['./pages/home/home.vue'], resolve)},
 	// { path: '/tag-detail', component: resolve => require(['./pages/home/home-tab0/tag-detail'], resolve) },
 
 	{ path: '/protocol', component: resolve => require(['./pages/login/protocol'], resolve) },
@@ -28,7 +28,7 @@ const routes = [
 	{ path: '/channel-login', component: resolve => require(['./pages/login/channel-login'], resolve) },
 	{ path: '/channel-xjdk', component: resolve => require(['./pages/login/channel-xjdk'], resolve) },
 	{ path: '/channel-xjdk2', component: resolve => require(['./pages/login/channel-xjdk2'], resolve) },
-	{ path: '/channel-aqy', component: resolve => require(['./pages/login/channel-aqy'], resolve) },
+	{ path: '/', component: resolve => require(['./pages/login/channel-aqy'], resolve) },
 	// { path: '/setting', component: resolve => require(['./pages/mine/setting'], resolve) },
 	// { path: '/about-us', component:resolve => require(['./pages/mine/about-us'], resolve)  },
 	// { path: '/contact', component: pages.Contact, },

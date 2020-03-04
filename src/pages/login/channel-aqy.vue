@@ -185,7 +185,7 @@
           </div>
           <div class="agree">
             <img src="./img/duihao@2x.png" />
-            <span>申请即同意《融花花》<span @click="goProtocol">《隐私条款》</span></span>
+            <span>申请即同意《易财钱包》<span @click="goProtocol">《隐私条款》</span></span>
           </div>
         </div>
         <img src="./img/dkm_bottom.png" class="pic_bottom" />
@@ -215,16 +215,16 @@ export default {
 		}
   },
   beforeCreate(){
-    api.checkChannelIsEffective(Param.channelCode).then(data => {
-        if(data.code == 0) {
-          if(data.data) {
-            alert('该渠道已经下线，请联系渠道商确认是否可用！');
-            window.location.href = '/';
-          }
-        } else {
-          alert(data.msg);
-        }
-    });
+    // api.checkChannelIsEffective(Param.channelCode).then(data => {
+    //     if(data.code == 0) {
+    //       if(data.data) {
+    //         alert('该渠道已经下线，请联系渠道商确认是否可用！');
+    //         window.location.href = '/';
+    //       }
+    //     } else {
+    //       alert(data.msg);
+    //     }
+    // });
     // const uuid = localStorage.getItem('uuid');
     // api.getImgcode(uuid).then(data=> {
     //   console.log('data:', data);
@@ -303,7 +303,8 @@ export default {
       this.$loading.close();
 
       if(data.code == 0){
-        location.href = 'http://121.40.245.243/dx/?channelCode='+Param.channelCode;
+        // 分发页地址
+        location.href = 'http://download.whwen.cn';
       }else{
         this.$toast(data.msg, 'success');
       }

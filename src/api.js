@@ -48,7 +48,9 @@ http.interceptors.push((req, next) => {
 })
 
 // const baseUrl = 'http://121.40.245.243:8016/bee-api/';
-const baseUrl = 'http://121.40.245.243:8016/rhh-api/';
+const baseUrl = 'http://api.whwen.cn/ycqb-api/';
+// const baseUrl = 'http://47.114.163.8:8081/ycqb-api/';
+// const baseUrl = 'http://121.40.245.243:8016/rhh-api/';
 
 export const path = {
 	// init_data: 'v2/app/loan/hot',
