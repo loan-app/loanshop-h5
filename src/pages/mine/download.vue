@@ -1,5 +1,5 @@
 <template>
-	<page title="融花花" :no-back="true">
+	<page title="易财钱包" :no-back="true">
 		<div class="ta-c" style="margin-top: 80px;">
 			<img src="./icon_1024.png"
 				style="width: 160px;">

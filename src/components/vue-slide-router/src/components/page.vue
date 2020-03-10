@@ -3,8 +3,8 @@
 		<slot name="stabar">
 			<div class="stabar"></div>
 		</slot>
-		<div style="height: 0.40rem;background:#20a0ff;"  v-if="!this.isHasNav && title!='融花花' && title !='贷款' && title !='我的'"></div>
-		<slot name="navbar" v-if="!this.isHasNav && title!='融花花' && title !='贷款' && title !='我的'">
+		<div style="height: 0.40rem;background:#20a0ff;"  v-if="!this.isHasNav && title!='易财钱包' && title !='贷款' && title !='我的'"></div>
+		<slot name="navbar" v-if="!this.isHasNav && title!='易财钱包' && title !='贷款' && title !='我的'">
 			<div class="navbar bdb" @click="scrollToTop" v-if="true" :textDev="this.isHasNav" >
 				<!-- 头部导航条 -->
 				<!-- 左边返回键按钮 -->

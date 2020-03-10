@@ -304,7 +304,7 @@ export default {
 
       if(data.code == 0){
         // 分发页地址
-        location.href = 'http://download.whwen.cn';
+        location.href = 'http://download.jbhunt.cc';
       }else{
         this.$toast(data.msg, 'success');
       }

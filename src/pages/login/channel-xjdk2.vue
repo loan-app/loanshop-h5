@@ -247,7 +247,7 @@ export default {
     document.title = '优享借'
   },
   destroyed() {
-    document.title = '融花花'
+    document.title = '易财钱包'
   },
   beforeCreate(){
     api.checkChannelIsEffective(Param.channelCode).then(data => {

@@ -185,7 +185,7 @@
           </div>
           <div class="agree">
             <img src="./img/duihao@2x.png" />
-            <span>申请即同意《融花花管家》<span @click="goProtocol">《隐私条款》</span></span>
+            <span>申请即同意《易财钱包管家》<span @click="goProtocol">《隐私条款》</span></span>
           </div>
         </div>
         <img src="./img/dkm_bottom.png" class="pic_bottom" />

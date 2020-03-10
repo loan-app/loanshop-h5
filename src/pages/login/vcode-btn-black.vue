@@ -39,11 +39,11 @@ export default {
 			this.isSending = true;
 			this.sendTxt = '发送中...';
 			const mobile = this.form.mobile;
-			let title = '融花花'
+			let title = '易财钱包'
 			if(this.$route.path == '/channel-xjdk') {
 				title = '秒花呗'
 			} else {
-				title = '融花花'
+				title = '易财钱包'
 			}
 			api.sendVcode(mobile, title, localStorage.getItem('uuid'), document.getElementById('img-code-in').value).then(body => {
 				// this.isSetPsw = body.isSetP; //发送短信验证码后 可获取是否设置过密码

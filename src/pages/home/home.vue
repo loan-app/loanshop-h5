@@ -315,7 +315,7 @@
     <section class="banner">
       <div>
         <img src="./images/logo3.png"/>
-        <p>借钱就找融花花</p>
+        <p>借钱就找易财钱包</p>
       </div>
     </section>
 
@@ -353,7 +353,7 @@
   export default {
     name: 'home',
     created() {
-      document.title = '融花花';
+      document.title = '易财钱包';
     }
   }
 </script>

@@ -66,7 +66,7 @@ router.beforeEach(async (to, from, next) => {
 		}
 		else if(/android/i.test(ua)) Param.plat = 2
 		Param.inWechat = /MicroMessenger/i.test(ua)
-		window.Param.app_name = Param.app_name || Param.appname || '融花花'
+		window.Param.app_name = Param.app_name || Param.appname || '易财钱包'
 	}
 	const getPath = ro => {
 		let { path, query } = ro;
