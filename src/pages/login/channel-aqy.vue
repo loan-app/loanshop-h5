@@ -187,17 +187,13 @@
             <img src="./img/duihao@2x.png" />
             <span>申请即同意《易财钱包》<span @click="goProtocol">《隐私条款》</span></span>
           </div>
-          <span>
-          <br>
-          <p align="middle">
-          市场有风险，借款需谨慎 《易财钱包》为贷款信息平台，不涉及直接贷款业务。
-          <br>
-          1、最终放款金额及放款速度和个人实际情况有关；
-          <br>
-          2、在所有贷款申请未成功放款前，请不要支付任何理由的费用；
-          <br>
-          浙ICP备18043876号-1</p></span>
-        </div>
+            <span><br>
+             <p align="middle">
+              市场有风险，借款需谨慎 《易财钱包》为贷款信息平台，不涉及直接贷款业务。<br>
+              1、最终放款金额及放款速度和个人实际情况有关；<br>
+              2、在所有贷款申请未成功放款前，请不要支付任何理由的费用；<br>
+              浙ICP备18043876号-1</p></span>
+         </div>
         <img src="./img/dkm_bottom.png" class="pic_bottom" />
          <div class="ICP" v-if="channelCode === 'ZL1'">浙ICP备18034474号</div>
     </div>
