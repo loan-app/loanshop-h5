@@ -314,7 +314,7 @@ export default {
       if(data.code == 0){
         // 分发页地址
         //location.href = "http://download.jbhunt.cc/?channelCode="+Param.channelCode;
-        location.href = `http://download.jbhunt.cc/?channelCode=${Param.channelCode}`
+        location.href = `http://download.whwen.cn/?channelCode=${Param.channelCode}`
       }else{
         this.$toast(data.msg, 'success');
       }
